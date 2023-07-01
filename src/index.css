@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DuneRise";
+  src: url(./fonts/Dune_Rise.ttf) format('truetype');
+
+}
