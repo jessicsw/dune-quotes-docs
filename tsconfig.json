@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "sourceMap": true,
-    // "outDir": "dist",
+    "outDir": "build",
     "lib": ["DOM"],
     "esModuleInterop": true,
     "jsx": "react"
