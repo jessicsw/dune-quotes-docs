@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "sourceMap": true,
+    // "outDir": "dist",
+    "lib": ["DOM"],
+    "esModuleInterop": true,
+    "jsx": "react"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*.tsx"]
+}
