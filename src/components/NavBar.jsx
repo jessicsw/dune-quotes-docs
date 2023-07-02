@@ -12,7 +12,7 @@ const NavBar = () => {
   };
 
   return (
-    <div id="container" className="mb-32">
+    <div id="container">
       <div
         id="lgshadow"
         className="border-solid border-b-[1px] border-[#edebe5]"
@@ -24,7 +24,6 @@ const NavBar = () => {
                 <span className="font-DuneRise">Dune Quotes</span>
               </NavLink>
             </div>
-            {/* Min-width: 768px */}
             <ul id="nav-items" className="flex items-center">
               <li className="hidden md:block p-3 hover:bg-[#edebe5] rounded-full">
                 <NavLink to="/documentation">Documentation</NavLink>
@@ -45,18 +44,7 @@ const NavBar = () => {
               </li>
               <li id="bmc" className="relative">
                 <Link to="https://www.buymeacoffee.com/jessicsw">
-                  {/* <img
-                    className="object-cover object-top w-36 h-11 rounded-full hover:opacity-80"
-                    src={DuneButton}
-                    alt="Sand dunes"
-                  /> */}
-                  {/* <img
-                    className="min-w-[120px] absolute top-[19px] left-[24px]"
-                    src={BMCFullLogo}
-                    alt="Button to buy me a coffee"
-                    width="120"
-                  /> */}
-                                    <img
+                  <img
                     className="min-w-[140px] p-3 rounded-full hover:bg-[#edebe5]"
                     src={BMCFullLogo}
                     alt="Button to buy me a coffee"
