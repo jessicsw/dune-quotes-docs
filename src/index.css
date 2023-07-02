@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  code {
+    @apply bg-gray-200;
+    @apply p-[5px];
+  }
+  
+  th ,td {
+    @apply p-2;
+    @apply border-gray-200;
+    @apply border-solid;
+    @apply border-2;
+  }
+}
+
 @font-face {
   font-family: "DuneRise";
   src: url(./fonts/Dune_Rise.ttf) format('truetype');
-
 }
