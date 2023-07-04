@@ -11,9 +11,12 @@ const QueryParams = {
       </td>
       <td>
         <p className="mb-3">(Optional). Filters quotes by book title.</p>
+        <p>For example, filtering quotes by book title should look like:</p>
+        <p className="mb-2">
+          <code>/quotes?title=children-of-dune</code>
+        </p>
         <p>
-          For example, filtering quotes by Children of Dune should look like:{" "}
-          <code>/quotes?title=children-of-dune</code>.
+          <code>/random?title=dune-messiah</code>
         </p>
       </td>
     </tr>
@@ -99,7 +102,7 @@ const QueryParamsTable = (props: {
   page?: boolean;
 }): JSX.Element => {
   return (
-    <table className="table-auto my-5">
+    <table className="table-auto my-3">
       <thead>
         <tr>
           <th>Query Parameter</th>

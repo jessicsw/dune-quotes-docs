@@ -35,50 +35,56 @@ const Documentation = () => {
           ))}
         </ul>
       </div>
-      <div id="usage" className="my-8">
-        <h2 className="font-bold text-lg mb-3">Usage</h2>
-        <p className="mb-3">
-          Dune Quotes is a free RESTful API that returns JSON and uses standard
-          HTTP features.
+      <div id="usage" className="my-12">
+        <h2 className="text-2xl mb-2">Usage</h2>
+        <p>
+          Dune Quotes is a free, easy to use RESTful API that returns JSON and
+          uses standard HTTP features.
         </p>
-        <p className="mb-3">
-          API endpoints are relative to the following base URL:
-        </p>
-        <code className="text-xs md:text-base">
-          https://dune-quotes-production.up.railway.app/api/v1/
-        </code>
+        <p>API endpoints are relative to the following base URL:</p>
+        <code>https://dune-quotes-production.up.railway.app/api/v1/</code>
       </div>
-      <div id="rate-limit" className="my-8">
-        <h2 className="font-bold text-lg mb-3">Rate Limit</h2>
-        <p className="mb-3">
+      <div id="rate-limit" className="mb-12">
+        <h2 className="text-2xl mb-2">Rate Limit</h2>
+        <p>
           The default rate limit is <em>100 requests per hour</em>, per IP
           address. If the rate limit is exceeded, the API will respond with a{" "}
           <code>429</code> status code.
         </p>
       </div>
-      <div id="rest-api" className="my-8">
-        <h2 className="font-bold text-lg mb-3">Using the REST API</h2>
-        {API_REFERENCE.map((endpoint) => (
-          <div key={endpoint.route} id={endpoint.hashLink.id} className="mb-20">
-            <h3 className="font-semibold mb-3">{endpoint.description}</h3>
-            {endpoint.query && <QueryParamsTable {...endpoint.query} />}
-            <div id="example-fetch" className="flex items-center space-x-4">
-              <code className="overflow-x-auto">{endpoint.example}</code>
-              <button
-                className="p-3 rounded-full bg-[#edebe5]"
-                onClick={() => handleFetch(endpoint.example, endpoint.route)}
-              >
-                Fetch
-              </button>
-            </div>
-            <div id="example-json" className="mt-3">
-              <p>JSON</p>
-              <pre className="whitespace-pre-wrap bg-gray-200 p-3">
-                {examples[endpoint.route]}
-              </pre>
-            </div>
-          </div>
-        ))}
+      <div id="rest-api" className="mb-12">
+        <h2 className="text-2xl mb-2">Using the REST API</h2>
+        <p className="mb-12">
+          Dive into the specifics of each API endpoint by checking out the
+          complete documentation below.
+        </p>
+        <ul className="list-inside list-decimal mb-20">
+          {API_REFERENCE.map((endpoint) => (
+            <li
+              className="mb-12"
+              key={endpoint.route}
+              id={endpoint.hashLink.id}
+            >
+              <span>{endpoint.description}</span>
+              {endpoint.query && <QueryParamsTable {...endpoint.query} />}
+              <div id="example-fetch" className="flex items-center space-x-4">
+                <code className="overflow-x-auto">{endpoint.example}</code>
+                <button
+                  className="p-3 rounded-full bg-[#edebe5]"
+                  onClick={() => handleFetch(endpoint.example, endpoint.route)}
+                >
+                  Fetch
+                </button>
+              </div>
+              <div id="example-json" className="mt-3">
+                <p>JSON</p>
+                <pre className="whitespace-pre-wrap">
+                  {examples[endpoint.route]}
+                </pre>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

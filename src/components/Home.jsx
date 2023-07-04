@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div
       id="container"
-      className="md:mx-auto max-w-4xl flex flex-col items-center"
+      className="md:mx-auto max-w-4xl flex flex-col items-center mt-32"
     >
       <img
         className="min-w-[250px] m-0"

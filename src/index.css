@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  code {
-    @apply bg-gray-200;
-    @apply p-[5px];
+  code, pre {
+    @apply bg-[#f8f8f8];
+    @apply border-solid border-[#e5e5e5] border-[1px];
+    @apply rounded-md;
+    @apply p-1;
+    @apply text-sm;
   }
   
   th ,td {
