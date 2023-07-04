@@ -20,12 +20,12 @@ const Documentation = () => {
   return (
     <div className="md:mx-auto max-w-4xl px-5">
       <div id="api-reference" className="my-8">
-        <h2 className="font-bold text-lg mb-3">API Reference</h2>
+        <h2 className="text-2xl mb-3">API Reference</h2>
         <ul className="list-decimal list-inside">
           {API_REFERENCE.map((endpoint) => (
             <li key={endpoint.route}>
               <HashLink
-                className="underline"
+                className="underline text-blue-700"
                 smooth
                 to={endpoint.hashLink.fragment}
               >
