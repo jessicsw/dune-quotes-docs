@@ -13,7 +13,7 @@ const API_REFERENCE: APIReference[] = [
       author: true,
       authorId: true,
     },
-    example: `https://dune-quotes-production.up.railway.app/api/v1/random`,
+    example: `https://api.duniverse.space/v1/random`,
   },
   {
     description: "Get list of quotes",
@@ -29,7 +29,7 @@ const API_REFERENCE: APIReference[] = [
       limit: true,
       page: true,
     },
-    example: `https://dune-quotes-production.up.railway.app/api/v1/quotes?title=dune-messiah`,
+    example: `https://api.duniverse.space/v1/quotes?title=dune-messiah`,
   },
   {
     description: "Get quote by ID",
@@ -38,7 +38,7 @@ const API_REFERENCE: APIReference[] = [
       id: "quote-by-id",
       fragment: "#quote-by-id",
     },
-    example: `https://dune-quotes-production.up.railway.app/api/v1/quotes/1fa04888-c03e-4202-b77c-70f5ea0a480f`,
+    example: `https://api.duniverse.space/v1/quotes/1fa04888-c03e-4202-b77c-70f5ea0a480f`,
   },
   {
     description: "Get list of books",
@@ -47,7 +47,7 @@ const API_REFERENCE: APIReference[] = [
       id: "books",
       fragment: "#books",
     },
-    example: `https://dune-quotes-production.up.railway.app/api/v1/books`,
+    example: `https://api.duniverse.space/v1/books`,
   },
   {
     description: "Get book by ID",
@@ -56,7 +56,7 @@ const API_REFERENCE: APIReference[] = [
       id: "book-by-id",
       fragment: "#book-by-id",
     },
-    example: `https://dune-quotes-production.up.railway.app/api/v1/books/a7257113-5537-438e-9d47-2d32bd5d3c1b`,
+    example: `https://api.duniverse.space/v1/books/a7257113-5537-438e-9d47-2d32bd5d3c1b`,
   },
 ];
 

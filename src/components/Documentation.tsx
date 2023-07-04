@@ -42,7 +42,7 @@ const Documentation = () => {
           uses standard HTTP features.
         </p>
         <p>API endpoints are relative to the following base URL:</p>
-        <code>https://dune-quotes-production.up.railway.app/api/v1/</code>
+        <code>https://api.duniverse.space/v1/</code>
       </div>
       <div id="rate-limit" className="mb-12">
         <h2 className="text-2xl mb-2">Rate Limit</h2>

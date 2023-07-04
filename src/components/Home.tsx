@@ -6,7 +6,7 @@ const Home = () => {
   const REACT_LINK = <a href="https://react.dev/">React</a>;
   const EXPRESS_LINK = <a href="https://expressjs.com/">Express</a>;
   const POSTGRESQL_LINK = <a href="https://www.postgresql.org/">PostgreSQL</a>;
-  const EXAMPLE_API = `https://dune-quotes-production.up.railway.app/api/v1/random`;
+  const EXAMPLE_API = `https://api.duniverse.space/v1/random`;
 
   const handleFetch = async (): Promise<void> => {
     try {
@@ -39,8 +39,8 @@ const Home = () => {
         <span className="underline underline-offset-1">{POSTGRESQL_LINK}</span>.
       </h3>
 
-      <div id="test-api" className="mt-20 max-w-[610px]">
-        <p>Try it out!</p>
+      <div id="test-api" className="mt-20">
+        <p className="mb-2">Try it out!</p>
         <div id="fetch" className="flex space-x-4">
           <code>{EXAMPLE_API}</code>
           <button
@@ -52,7 +52,7 @@ const Home = () => {
         </div>
         <div id="json" className="mt-3">
           <p>JSON</p>
-          <pre className="whitespace-pre-wrap w-full max-h-64 overflow-y-auto">
+          <pre className="whitespace-pre-wrap w-[610px] max-h-64 overflow-y-auto">
             {example.api}
           </pre>
         </div>
