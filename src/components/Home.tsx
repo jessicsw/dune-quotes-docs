@@ -26,7 +26,7 @@ const Home = () => {
       <img
         className="min-w-[250px] m-0"
         src={require("../assets/dune.png")}
-        alt="Dune API Logo"
+        alt="Dune Quotes API Logo"
         width="250"
       />
       <h1 className="font-DuneRise py-5 text-xl">Dune Quotes API</h1>

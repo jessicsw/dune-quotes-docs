@@ -1,6 +1,6 @@
 {
-  "short_name": "Dune API",
-  "name": "Dune API",
+  "short_name": "Dune Quotes API",
+  "name": "Dune Quotes API",
   "icons": [
     {
       "src": "favicon.ico",
