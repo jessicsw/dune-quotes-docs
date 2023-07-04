@@ -70,7 +70,7 @@ const Documentation = () => {
               <div id="example-fetch" className="flex items-center space-x-4">
                 <code className="overflow-x-auto">{endpoint.example}</code>
                 <button
-                  className="p-3 rounded-full bg-[#edebe5]"
+                  className="py-1 px-5 rounded-full bg-[#edebe5]"
                   onClick={() => handleFetch(endpoint.example, endpoint.route)}
                 >
                   Fetch
