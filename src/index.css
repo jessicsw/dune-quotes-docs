@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "DuneRise";
+  src: url(./fonts/Dune_Rise.ttf) format('truetype');
+}
+
 @layer base {
+  body {
+    @apply bg-white
+  }
+
   code, pre {
     @apply bg-[#f8f8f8];
     @apply border-solid border-[#e5e5e5] border-[1px];
     @apply rounded-md;
     @apply p-1;
     @apply text-sm;
+    @apply leading-7;
   }
   
   th ,td {
@@ -19,7 +29,22 @@
   }
 }
 
-@font-face {
-  font-family: "DuneRise";
-  src: url(./fonts/Dune_Rise.ttf) format('truetype');
+/* OS Dark Mode */
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply text-[#eeeeee];
+      @apply bg-[#121212];
+    }
+
+    code, pre {
+      @apply text-[#eeeeee];
+      @apply bg-[#ffffff];
+      @apply bg-opacity-20;
+    }
+  }
+}
+
+.dark {
+  @apply bg-[#121212];
 }

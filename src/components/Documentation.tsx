@@ -18,14 +18,14 @@ const Documentation = () => {
   };
 
   return (
-    <div className="md:mx-auto max-w-4xl px-5">
+    <div className="md:mx-auto max-w-4xl p-5 dark:bg-[#121212] text-black dark:text-[#eeeeee]">
       <div id="api-reference" className="my-8">
         <h2 className="text-2xl mb-3">API Reference</h2>
         <ul className="list-decimal list-inside">
           {API_REFERENCE.map((endpoint) => (
             <li key={endpoint.route}>
               <HashLink
-                className="underline text-blue-700"
+                className="underline text-blue-700 dark:text-blue-500"
                 smooth
                 to={endpoint.hashLink.fragment}
               >
@@ -42,14 +42,19 @@ const Documentation = () => {
           uses standard HTTP features.
         </p>
         <p>API endpoints are relative to the following base URL:</p>
-        <code>https://api.duniverse.space/v1/</code>
+        <code className="dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
+          https://api.duniverse.space/v1/
+        </code>
       </div>
       <div id="rate-limit" className="mb-12">
         <h2 className="text-2xl mb-2">Rate Limit</h2>
         <p>
           The default rate limit is <em>100 requests per hour</em>, per IP
           address. If the rate limit is exceeded, the API will respond with a{" "}
-          <code>429</code> status code.
+          <code className="dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
+            429
+          </code>{" "}
+          status code.
         </p>
       </div>
       <div id="rest-api" className="mb-12">
@@ -68,9 +73,11 @@ const Documentation = () => {
               <span>{endpoint.description}</span>
               {endpoint.query && <QueryParamsTable {...endpoint.query} />}
               <div id="example-fetch" className="flex items-center space-x-4">
-                <code className="overflow-x-auto">{endpoint.example}</code>
+                <code className="overflow-x-auto dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
+                  {endpoint.example}
+                </code>
                 <button
-                  className="py-1 px-5 rounded-full bg-[#edebe5]"
+                  className="py-1 px-5 rounded-full bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
                   onClick={() => handleFetch(endpoint.example, endpoint.route)}
                 >
                   Fetch
@@ -78,7 +85,7 @@ const Documentation = () => {
               </div>
               <div id="example-json" className="mt-3">
                 <p>JSON</p>
-                <pre className="whitespace-pre-wrap">
+                <pre className="whitespace-pre-wrap dark:bg-opacity-20 text-black bg-[#f8f8f8]">
                   {examples[endpoint.route]}
                 </pre>
               </div>

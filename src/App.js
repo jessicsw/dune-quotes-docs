@@ -8,8 +8,8 @@ import "./index.css";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <NavBar/>
+      <div className="dark:bg-[#121212] dark:text-[#eeeeee] bg-white">
+        <NavBar />
         <Routes>
           <Route
             path="/documentation"

@@ -4,19 +4,27 @@ const QueryParams = {
   title: (
     <tr>
       <td>
-        <code>title</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          title
+        </code>
       </td>
       <td>
-        <code>string</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          string
+        </code>
       </td>
       <td>
         <p className="mb-3">(Optional). Filters quotes by book title.</p>
         <p>For example, filtering quotes by book title should look like:</p>
         <p className="mb-2">
-          <code>/quotes?title=children-of-dune</code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            /quotes?title=children-of-dune
+          </code>
         </p>
         <p>
-          <code>/random?title=dune-messiah</code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            /random?title=dune-messiah
+          </code>
         </p>
       </td>
     </tr>
@@ -24,16 +32,23 @@ const QueryParams = {
   author: (
     <tr>
       <td>
-        <code>author</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          author
+        </code>
       </td>
       <td>
-        <code>string</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          string
+        </code>
       </td>
       <td>
         <p>
-          (Optional) Filters books by <code>author</code>. Currently, Frank
-          Herbert is the only author in the database. Brian Herbert and Kevin
-          Anderson will be added at some point.
+          (Optional) Filters books by{" "}
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            author
+          </code>
+          . Currently, Frank Herbert is the only author in the database. Brian
+          Herbert and Kevin Anderson will be added at some point.
         </p>
       </td>
     </tr>
@@ -41,15 +56,26 @@ const QueryParams = {
   authorId: (
     <tr>
       <td>
-        <code>authorId</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          authorId
+        </code>
       </td>
       <td>
-        <code>string</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          string
+        </code>
       </td>
       <td>
         <p>
-          (Optional) Same as <code>author</code> parameter, except by{" "}
-          <code>authorId</code>.
+          (Optional) Same as{" "}
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            author
+          </code>{" "}
+          parameter, except by{" "}
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            authorId
+          </code>
+          .
         </p>
       </td>
     </tr>
@@ -57,16 +83,26 @@ const QueryParams = {
   limit: (
     <tr>
       <td>
-        <code>limit</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          limit
+        </code>
       </td>
       <td>
-        <code>number</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          number
+        </code>
       </td>
       <td>
         <div className="flex space-x-5 mb-3">
-          <code>Min: 1</code>
-          <code>Max: 100</code>
-          <code>Default: 10</code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            Min: 1
+          </code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            Max: 100
+          </code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            Default: 10
+          </code>
         </div>
         <p>(Optional) Sets the number of quotes to return per page.</p>
       </td>
@@ -75,15 +111,23 @@ const QueryParams = {
   page: (
     <tr>
       <td>
-        <code>page</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          page
+        </code>
       </td>
       <td>
-        <code>number</code>
+        <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+          number
+        </code>
       </td>
       <td>
         <div className="flex space-x-5 mb-3">
-          <code>Min: 1</code>
-          <code>Default: 1</code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            Min: 1
+          </code>
+          <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
+            Default: 1
+          </code>
         </div>
         <p>
           (Optional) The page of results to return. If the value is greater than
@@ -102,7 +146,7 @@ const QueryParamsTable = (props: {
   page?: boolean;
 }): JSX.Element => {
   return (
-    <table className="table-auto my-3">
+    <table className="table-auto my-3 dark:bg-[#121212]">
       <thead>
         <tr>
           <th>Query Parameter</th>
