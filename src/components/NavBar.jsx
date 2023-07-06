@@ -14,8 +14,20 @@ const NavBar = () => {
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
-    const prefersDarkTheme = window.matchMedia("(prefers-color-scheme): dark");
-    console.log(currentTheme, prefersDarkTheme);
+    const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    if (currentTheme) {
+      currentTheme === "dark" && setToggleDarkTheme(false);
+      return;
+    }
+
+    if (prefersDarkTheme.matches) {
+      document.documentElement.classList.add("dark");
+      setToggleDarkTheme(false);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setToggleDarkTheme(true);
+    }
   }, []);
 
   const handleToggleMenu = () => {
@@ -25,8 +37,10 @@ const NavBar = () => {
   const handleToggleDarkTheme = () => {
     if (toggleDarkTheme) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
     setToggleDarkTheme(!toggleDarkTheme);
   };
