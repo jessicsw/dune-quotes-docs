@@ -63,7 +63,7 @@ const NavBar = () => {
             </li>
             <li
               id="bmc"
-              className="rounded-full  p-3 hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
+              className="hidden md:block rounded-full  p-3 hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
             >
               <Link to="https://www.buymeacoffee.com/jessicsw">
                 <img
@@ -101,10 +101,7 @@ const NavBar = () => {
       </div>
       {toggleMenu && (
         <div className="fixed h-screen w-screen bg-white dark:bg-[#121212] border-t-[1px] border-[#edebe5]">
-          <h1 className="font-medium mt-5 mx-5 dark:text-md dark:text-gray-400">
-            API
-          </h1>
-          <ul id="nav-items" className="mt-2 dark:text-[#eeeeee]">
+          <ul id="nav-items" className="dark:text-[#eeeeee]">
             <li className="p-5 hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 ">
               <NavLink to="/documentation" onClick={handleToggleMenu}>
                 Documentation
@@ -124,6 +121,19 @@ const NavBar = () => {
                 />
                 <span>GitHub</span>
               </a>
+            </li>
+            <li
+              id="bmc"
+              className="p-5 hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
+            >
+              <Link to="https://www.buymeacoffee.com/jessicsw">
+                <img
+                  className="min-w-[120px]"
+                  src={BMCButton}
+                  alt="Button to buy me a coffee"
+                  width="120"
+                />
+              </Link>
             </li>
           </ul>
         </div>

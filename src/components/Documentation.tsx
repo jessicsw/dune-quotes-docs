@@ -85,7 +85,7 @@ const Documentation = () => {
               </div>
               <div id="example-json" className="mt-3">
                 <p>JSON</p>
-                <pre className="whitespace-pre-wrap dark:bg-opacity-20 text-black bg-[#f8f8f8]">
+                <pre className="whitespace-pre-wrap dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
                   {examples[endpoint.route]}
                 </pre>
               </div>

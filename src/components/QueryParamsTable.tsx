@@ -93,7 +93,7 @@ const QueryParams = {
         </code>
       </td>
       <td>
-        <div className="flex space-x-5 mb-3">
+        <div className="flex flex-wrap md:space-x-4 mb-3">
           <code className="dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
             Min: 1
           </code>
