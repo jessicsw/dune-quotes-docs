@@ -39,22 +39,29 @@ const Home = () => {
         <span className="underline underline-offset-1">{POSTGRESQL_LINK}</span>.
       </h3>
 
-      <div id="test-api" className="mt-20 mx-auto">
+      <div id="test-api" className="mt-20 w-[97%] md:w-auto">
         <p className="mb-2">Try it out!</p>
-        <div id="test-api-example">
-          <code className="dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
-            {EXAMPLE_API}
-          </code>
-          <button
-            className="my-5 py-1 px-5 md:ml-5 rounded-full w-28 bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
-            onClick={handleFetch}
+        <div id="test-api-example" className="">
+          <div
+            id="fetch"
+            className="flex flex-col md:flex-row md:space-y-0 md:items-center md:space-x-5 items-start space-y-5"
           >
-            Fetch
-          </button>
-          <p>JSON</p>
-          <pre className="whitespace-pre-wrap md:w-[610px] max-h-64 overflow-y-auto dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
-            {example.api}
-          </pre>
+            <code className="dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
+              {EXAMPLE_API}
+            </code>
+            <button
+              className="py-1 px-5 rounded-full w-28 bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
+              onClick={handleFetch}
+            >
+              Fetch
+            </button>
+          </div>
+          <div id="json" className="mt-5 w-full">
+            <p>JSON</p>
+            <pre className="whitespace-pre-wrap w-full md:w-[610px] max-h-64 overflow-y-auto dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
+              {example.api}
+            </pre>
+          </div>
         </div>
       </div>
     </div>

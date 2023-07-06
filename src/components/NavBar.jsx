@@ -44,12 +44,17 @@ const NavBar = () => {
             </NavLink>
           </div>
           <ul id="nav-items" className="flex items-center">
-            <li className="hidden md:block p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20">
-              <NavLink to="/documentation">Documentation</NavLink>
+            <li className="hidden md:block">
+              <NavLink
+                className="p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20"
+                to="/documentation"
+              >
+                Documentation
+              </NavLink>
             </li>
-            <li className="hidden md:block p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20">
+            <li className="hidden md:block">
               <a
-                className="flex space-x-1"
+                className="flex space-x-1 p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20"
                 href="http://github.com/jessicsw/dune-quotes"
               >
                 <img
@@ -63,19 +68,19 @@ const NavBar = () => {
             </li>
             <li
               id="bmc"
-              className="hidden md:block rounded-full  p-3 hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
+              className="hidden md:block rounded-full hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
             >
-              <Link to="https://www.buymeacoffee.com/jessicsw">
+              <Link className="" to="https://www.buymeacoffee.com/jessicsw">
                 <img
-                  className="min-w-[120px]"
+                  className="min-w-[120px] p-3"
                   src={BMCButton}
                   alt="Button to buy me a coffee"
                   width="120"
                 />
               </Link>
             </li>
-            <li className="p-3 hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 rounded-full">
-              <button onClick={handleToggleDarkTheme}>
+            <li className="hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 rounded-full md:mr-1">
+              <button onClick={handleToggleDarkTheme} className="p-3">
                 {toggleDarkTheme === false ? (
                   <LightModeOutlinedIcon />
                 ) : (
@@ -86,7 +91,7 @@ const NavBar = () => {
             <li>
               <button
                 id="icon-container"
-                className="md:hidden p-3 hover:bg-[#edebe5] rounded-full mx-2 dark:hover:bg-white dark:hover:bg-opacity-20"
+                className="md:hidden p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20 mr-1"
                 onClick={handleToggleMenu}
               >
                 {toggleMenu ? (
@@ -102,14 +107,18 @@ const NavBar = () => {
       {toggleMenu && (
         <div className="fixed h-screen w-screen bg-white dark:bg-[#121212] border-t-[1px] border-[#edebe5]">
           <ul id="nav-items" className="dark:text-[#eeeeee]">
-            <li className="p-5 hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 ">
-              <NavLink to="/documentation" onClick={handleToggleMenu}>
+            <li className="hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20">
+              <NavLink
+                className="p-5 relative inline-block w-screen"
+                to="/documentation"
+                onClick={handleToggleMenu}
+              >
                 Documentation
               </NavLink>
             </li>
-            <li className="hover:bg-[#edebe5] p-5 dark:hover:bg-white dark:hover:bg-opacity-20">
+            <li className="hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20">
               <a
-                className="flex space-x-1"
+                className="flex space-x-1 p-5"
                 href="http://github.com/jessicsw/dune-quotes"
                 onClick={handleToggleMenu}
               >
@@ -124,14 +133,14 @@ const NavBar = () => {
             </li>
             <li
               id="bmc"
-              className="p-5 hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
+              className="hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
             >
               <Link to="https://www.buymeacoffee.com/jessicsw">
                 <img
-                  className="min-w-[120px]"
+                  className="min-w-[140px] p-5"
                   src={BMCButton}
                   alt="Button to buy me a coffee"
-                  width="120"
+                  width="140"
                 />
               </Link>
             </li>
