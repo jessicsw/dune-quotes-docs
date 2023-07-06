@@ -1,16 +1,17 @@
+import React from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import ClearIcon from "@mui/icons-material/Clear";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import BMCButton from "../assets/bmc-full-logo.svg";
 import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import GitHubMark from "../assets/github-mark.svg";
-import GitHubMarkWhite from "../assets/github-mark-white.svg";
+import { ReactComponent as BMCButton } from "../assets/bmc-full-logo.svg";
+import { ReactComponent as GitHubMark } from "../assets/github-mark.svg";
+import { ReactComponent as GitHubMarkWhite } from "../assets/github-mark-white.svg";
 
 const NavBar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [toggleDarkTheme, setToggleDarkTheme] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+  const [toggleDarkTheme, setToggleDarkTheme] = useState<boolean>(true);
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
@@ -30,11 +31,11 @@ const NavBar = () => {
     }
   }, []);
 
-  const handleToggleMenu = () => {
+  const handleToggleMenu = (): void => {
     setToggleMenu(!toggleMenu);
   };
 
-  const handleToggleDarkTheme = () => {
+  const handleToggleDarkTheme = (): void => {
     if (toggleDarkTheme) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -71,26 +72,23 @@ const NavBar = () => {
                 className="flex space-x-1 p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20"
                 href="http://github.com/jessicsw/dune-quotes"
               >
-                <img
-                  src={toggleDarkTheme ? GitHubMark : GitHubMarkWhite}
-                  alt="GitHub Logo"
-                  width="24"
-                  height="24"
-                />
+                {toggleDarkTheme ? (
+                  <GitHubMark width="24" height="24" title="GitHub logo" />
+                ) : (
+                  <GitHubMarkWhite width="24" height="24" title="GitHub logo" />
+                )}
                 <span>GitHub</span>
               </a>
             </li>
             <li
               id="bmc"
-              className="hidden md:block rounded-full hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
+              className="hidden md:inline rounded-full hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
             >
-              <Link className="" to="https://www.buymeacoffee.com/jessicsw">
-                <img
-                  className="min-w-[120px] p-3"
-                  src={BMCButton}
-                  alt="Button to buy me a coffee"
-                  width="120"
-                />
+              <Link
+                className="flex items-center p-3"
+                to="https://www.buymeacoffee.com/jessicsw"
+              >
+                <BMCButton width="120" height="25" title="Buy me a coffee" />
               </Link>
             </li>
             <li className="hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 rounded-full md:mr-1">
@@ -136,12 +134,11 @@ const NavBar = () => {
                 href="http://github.com/jessicsw/dune-quotes"
                 onClick={handleToggleMenu}
               >
-                <img
-                  src={toggleDarkTheme ? GitHubMark : GitHubMarkWhite}
-                  alt="GitHub Logo"
-                  width="24"
-                  height="24"
-                />
+                {toggleDarkTheme ? (
+                  <GitHubMark width="24" height="24" title="GitHub logo" />
+                ) : (
+                  <GitHubMarkWhite width="24" height="24" title="GitHub logo" />
+                )}
                 <span>GitHub</span>
               </a>
             </li>
@@ -149,13 +146,11 @@ const NavBar = () => {
               id="bmc"
               className="hover:bg-[#edebe5] dark:hover:bg-black dark:hover:bg-opacity-20 dark:invert"
             >
-              <Link to="https://www.buymeacoffee.com/jessicsw">
-                <img
-                  className="min-w-[140px] p-5"
-                  src={BMCButton}
-                  alt="Button to buy me a coffee"
-                  width="140"
-                />
+              <Link
+                className="inline-block p-5 w-screen"
+                to="https://www.buymeacoffee.com/jessicsw"
+              >
+                <BMCButton width="120" height="25" title="Buy me a coffee" />
               </Link>
             </li>
           </ul>

@@ -1,3 +1,5 @@
+/// <reference types="react-scripts" />
+
 export type APIReference = {
   description: string;
   route: string;

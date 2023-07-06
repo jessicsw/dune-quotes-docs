@@ -5,7 +5,9 @@
     "outDir": "build",
     "lib": ["DOM"],
     "esModuleInterop": true,
-    "jsx": "react"
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "CommonJS"
   },
   "typeAcquisition": {
     "enable": true
@@ -13,5 +15,6 @@
   "ts-node": {
     "esm": true
   },
-  "include": ["src/**/*.tsx"]
+  "include": ["src/**/*.tsx"],
+  "exclude": ["node_modules"]
 }
