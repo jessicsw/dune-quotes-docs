@@ -1,11 +1,19 @@
 import { HashLink } from "react-router-hash-link";
 import QueryParamsTable from "./QueryParamsTable";
 import React, { useState } from "react";
-import { Examples } from "../../types";
+import { Example } from "../../types";
 import API_REFERENCE from "../API_REFERENCE";
+import ResponseShape from "./ResponseShape";
+import CodeBlock from "./CodeBlock";
 
 const Documentation = () => {
-  const [examples, setExamples] = useState<Examples.URL>({});
+  const [examples, setExamples] = useState<Example.Documentation>({
+    random: `null`,
+    quotes: `null`,
+    "quotes/:id": `null`,
+    books: `null`,
+    "books/:id": `null`,
+  });
 
   const handleFetch = async (url: string, route: string): Promise<void> => {
     try {
@@ -42,20 +50,20 @@ const Documentation = () => {
           uses standard HTTP features.
         </p>
         <p>API endpoints are relative to the following base URL:</p>
-        <code className="dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
-          https://api.duniverse.space/v1/
-        </code>
+        <div className="w-fit">
+          <CodeBlock code={`https://api.duniverse.space/v1/`} padding />
+        </div>
       </div>
       <div id="rate-limit" className="mb-12">
         <h2 className="text-2xl mb-2">Rate Limit</h2>
-        <p>
-          The default rate limit is <em>100 requests per hour</em>, per IP
-          address. If the rate limit is exceeded, the API will respond with a{" "}
-          <code className="dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
-            429
-          </code>{" "}
-          status code.
-        </p>
+        <span>
+          {`The default rate limit is `}
+          <em>100 requests per hour</em>
+          {`, per IP
+          address. If the rate limit is exceeded, the API will respond with a `}
+        </span>
+        <CodeBlock code={`429`} inline />
+        <span>{` status code.`}</span>
       </div>
       <div id="rest-api" className="mb-12">
         <h2 className="text-2xl mb-2">Using the REST API</h2>
@@ -66,28 +74,29 @@ const Documentation = () => {
         <ul className="list-inside list-decimal mb-20">
           {API_REFERENCE.map((endpoint) => (
             <li
-              className="mb-12"
+              className="mb-12 w-full"
               key={endpoint.route}
               id={endpoint.hashLink.id}
             >
               <span>{endpoint.description}</span>
               {endpoint.query && <QueryParamsTable {...endpoint.query} />}
-              <div id="example-fetch" className="flex items-center space-x-4">
-                <code className="overflow-x-auto dark:bg-opacity-20 dark:text-[#eeeeee] text-black bg-[#f8f8f8]">
-                  {endpoint.example}
-                </code>
+              <ResponseShape responseShape={endpoint.responseShape} />
+              <div className="mt-10 mb-2">Example</div>
+              <div id="example-fetch" className="flex flex-wrap items-start">
+                <div className="mb-5 w-full">
+                  <CodeBlock code={endpoint.example} padding />
+                </div>
                 <button
-                  className="py-1 px-5 rounded-full bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
+                  className="py-2 px-5 rounded-full bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
                   onClick={() => handleFetch(endpoint.example, endpoint.route)}
+                  title="Fetch example endpoint"
                 >
                   Fetch
                 </button>
               </div>
               <div id="example-json" className="mt-3">
                 <p>JSON</p>
-                <pre className="whitespace-pre-wrap dark:bg-opacity-20 text-black bg-[#f8f8f8] dark:text-[#eeeeee]">
-                  {examples[endpoint.route]}
-                </pre>
+                <CodeBlock code={`${examples[endpoint.route]}`} padding />
               </div>
             </li>
           ))}

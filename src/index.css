@@ -9,11 +9,10 @@
 
 @layer base {
   body {
-    @apply bg-white
+    @apply bg-[#eeeeee]
   }
 
   code, pre {
-    @apply bg-[#f8f8f8];
     @apply border-solid border-[#e5e5e5] border-[1px];
     @apply rounded-md;
     @apply p-1;
@@ -35,12 +34,6 @@
     body {
       @apply text-[#eeeeee];
       @apply bg-[#121212];
-    }
-
-    code, pre {
-      @apply text-[#eeeeee];
-      @apply bg-[#ffffff];
-      @apply bg-opacity-20;
     }
   }
 }

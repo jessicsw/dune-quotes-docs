@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import { Examples } from "../../types";
+import { Example } from "../../types";
+import CodeBlock from "./CodeBlock";
+
+const REACT_LINK = <a href="https://react.dev/">React</a>;
+const EXPRESS_LINK = <a href="https://expressjs.com/">Express</a>;
+const POSTGRESQL_LINK = <a href="https://www.postgresql.org/">PostgreSQL</a>;
+const EXAMPLE_API = `https://api.duniverse.space/v1/random`;
 
 const Home = () => {
-  const [example, setExample] = useState<Examples.URL>({});
-  const REACT_LINK = <a href="https://react.dev/">React</a>;
-  const EXPRESS_LINK = <a href="https://expressjs.com/">Express</a>;
-  const POSTGRESQL_LINK = <a href="https://www.postgresql.org/">PostgreSQL</a>;
-  const EXAMPLE_API = `https://api.duniverse.space/v1/random`;
+  const [example, setExample] = useState<Example.Home>({
+    random: `null`,
+  });
 
   const handleFetch = async (): Promise<void> => {
     try {
       const response = await fetch(EXAMPLE_API);
       const json = await response.json();
-      setExample({ api: JSON.stringify(json, null, 5) });
+      setExample({ random: JSON.stringify(json, null, 5) });
     } catch (error: unknown) {
       console.error(error);
     }
@@ -39,29 +43,23 @@ const Home = () => {
         <span className="underline underline-offset-1">{POSTGRESQL_LINK}</span>.
       </h3>
 
-      <div id="test-api" className="mt-20 w-[97%] md:w-auto">
+      <div id="test-api" className="mt-20 w-full">
         <p className="mb-2">Try it out!</p>
-        <div id="test-api-example" className="">
-          <div
-            id="fetch"
-            className="flex flex-col md:flex-row md:space-y-0 md:items-center md:space-x-5 items-start space-y-5"
+        <div id="fetch" className="flex flex-wrap items-start">
+          <div className="mb-5 mr-5">
+            <CodeBlock code={EXAMPLE_API} padding margin />
+          </div>
+          <button
+            className="py-2 px-5 rounded-full w-20 text-[#eeeeee] bg-[#b05e20]"
+            onClick={handleFetch}
+            title="Fetch example endpoint"
           >
-            <code className="dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
-              {EXAMPLE_API}
-            </code>
-            <button
-              className="py-1 px-5 rounded-full w-28 bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
-              onClick={handleFetch}
-            >
-              Fetch
-            </button>
-          </div>
-          <div id="json" className="mt-5 w-full">
-            <p>JSON</p>
-            <pre className="whitespace-pre-wrap w-full md:w-[610px] max-h-64 overflow-y-auto dark:bg-opacity-20 dark:text-[#eeeeee] bg-[#f8f8f8] text-black">
-              {example.api}
-            </pre>
-          </div>
+            Fetch
+          </button>
+        </div>
+        <div id="json" className="mt-5">
+          <p>JSON</p>
+          <CodeBlock code={example.random} padding />
         </div>
       </div>
     </div>

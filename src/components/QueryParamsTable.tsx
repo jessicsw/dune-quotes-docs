@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { QueryParameters } from "../../types";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const QueryParams = {
+const paramDescription = {
   title: (
     <tr>
       <td>
@@ -138,30 +141,48 @@ const QueryParams = {
   ),
 };
 
-const QueryParamsTable = (props: {
-  title?: boolean;
-  author?: boolean;
-  authorId?: boolean;
-  limit?: boolean;
-  page?: boolean;
-}): JSX.Element => {
+const QueryParamsTable = ({
+  title,
+  author,
+  authorId,
+  limit,
+  page,
+}: QueryParameters): JSX.Element => {
+  const [toggleView, setToggleView] = useState<boolean>(false);
+
+  const handleToggleView = () => {
+    setToggleView(!toggleView);
+  };
+
   return (
-    <table className="table-auto my-3 dark:bg-[#121212]">
-      <thead>
-        <tr>
-          <th>Query Parameter</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.title && QueryParams.title}
-        {props.author && QueryParams.author}
-        {props.authorId && QueryParams.authorId}
-        {props.limit && QueryParams.limit}
-        {props.page && QueryParams.page}
-      </tbody>
-    </table>
+    <div className="my-3">
+      <button onClick={handleToggleView}>
+        {toggleView ? (
+          <ExpandMoreIcon titleAccess="Collapse query parameters table" />
+        ) : (
+          <ChevronRightIcon titleAccess="Expand query parameters table" />
+        )}
+      </button>
+      <span className="ml-2">Query Parameters</span>
+      {toggleView && (
+        <table className="table-auto my-3 dark:bg-[#121212]">
+          <thead>
+            <tr>
+              <th>Query Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {title && paramDescription.title}
+            {author && paramDescription.author}
+            {authorId && paramDescription.authorId}
+            {limit && paramDescription.limit}
+            {page && paramDescription.page}
+          </tbody>
+        </table>
+      )}
+    </div>
   );
 };
 

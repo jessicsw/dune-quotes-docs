@@ -54,7 +54,11 @@ const NavBar = () => {
       <div id="bar" className="flex py-3 md:mx-auto max-w-4xl">
         <div id="menu" className="flex min-w-full justify-between">
           <div id="logo" className="flex items-center space-x-2 ml-4">
-            <NavLink to="/" className="flex items-center">
+            <NavLink
+              to="/"
+              className="flex items-center"
+              title="Dune Quotes Homepage"
+            >
               <span className="font-DuneRise">Dune Quotes</span>
             </NavLink>
           </div>
@@ -63,6 +67,7 @@ const NavBar = () => {
               <NavLink
                 className="p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20"
                 to="/documentation"
+                title="Dune Quotes API Documentation"
               >
                 Documentation
               </NavLink>
@@ -71,6 +76,7 @@ const NavBar = () => {
               <a
                 className="flex space-x-1 p-3 hover:bg-[#edebe5] rounded-full dark:hover:bg-white dark:hover:bg-opacity-20"
                 href="http://github.com/jessicsw/dune-quotes"
+                title="Dune Quotes API GitHub"
               >
                 {toggleDarkTheme ? (
                   <GitHubMark width="24" height="24" title="GitHub logo" />
@@ -94,9 +100,9 @@ const NavBar = () => {
             <li className="hover:bg-[#edebe5] dark:hover:bg-white dark:hover:bg-opacity-20 rounded-full md:mr-1">
               <button onClick={handleToggleDarkTheme} className="p-3">
                 {toggleDarkTheme === false ? (
-                  <LightModeOutlinedIcon />
+                  <LightModeOutlinedIcon titleAccess="Toggle light mode" />
                 ) : (
-                  <DarkModeOutlinedIcon />
+                  <DarkModeOutlinedIcon titleAccess="Toggle dark mode" />
                 )}
               </button>
             </li>
@@ -107,9 +113,15 @@ const NavBar = () => {
                 onClick={handleToggleMenu}
               >
                 {toggleMenu ? (
-                  <ClearIcon className="scale-110" />
+                  <ClearIcon
+                    className="scale-110"
+                    titleAccess="Close mobile navigation menu"
+                  />
                 ) : (
-                  <MenuRoundedIcon className="scale-110" />
+                  <MenuRoundedIcon
+                    className="scale-110"
+                    titleAccess="Open mobile navigation menu"
+                  />
                 )}
               </button>
             </li>
@@ -124,6 +136,7 @@ const NavBar = () => {
                 className="p-5 relative inline-block w-screen"
                 to="/documentation"
                 onClick={handleToggleMenu}
+                title="Dune Quotes API Documentation"
               >
                 Documentation
               </NavLink>
@@ -133,6 +146,7 @@ const NavBar = () => {
                 className="flex space-x-1 p-5"
                 href="http://github.com/jessicsw/dune-quotes"
                 onClick={handleToggleMenu}
+                title="Dune Quotes API GitHub"
               >
                 {toggleDarkTheme ? (
                   <GitHubMark width="24" height="24" title="GitHub logo" />
@@ -149,6 +163,7 @@ const NavBar = () => {
               <Link
                 className="inline-block p-5 w-screen"
                 to="https://www.buymeacoffee.com/jessicsw"
+                title="Buy me a coffee"
               >
                 <BMCButton width="120" height="25" title="Buy me a coffee" />
               </Link>
