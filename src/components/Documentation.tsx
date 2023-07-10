@@ -87,7 +87,7 @@ const Documentation = () => {
                   <CodeBlock code={endpoint.example} padding />
                 </div>
                 <button
-                  className="py-2 px-5 rounded-full bg-[#edebe5] dark:text-[#eeeeee] dark:bg-[#5a533e]"
+                  className="py-2 px-5 rounded-full bg-[#b05e20] text-[#eeeeee]"
                   onClick={() => handleFetch(endpoint.example, endpoint.route)}
                   title="Fetch example endpoint"
                 >

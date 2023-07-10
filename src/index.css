@@ -9,7 +9,7 @@
 
 @layer base {
   body {
-    @apply bg-[#eeeeee]
+    @apply bg-white;
   }
 
   code, pre {
